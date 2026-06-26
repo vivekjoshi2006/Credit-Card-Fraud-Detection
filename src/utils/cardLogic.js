@@ -17,7 +17,16 @@ export const formatCardNumber = (value) => {
 };
 
 export const maskNumber = (num) => {
-  const clean = num.replace(/\s/g, '');
-  if (clean.length < 12) return num;
-  return `XXXX XXXX XXXX ${clean.slice(-4)}`;
+  const clean = num.replace(/\D/g, '');
+  if (clean.length === 0) return '';
+  
+  let masked = '';
+  for (let i = 0; i < clean.length; i++) {
+    if (i < clean.length - 4) {
+      masked += 'X';
+    } else {
+      masked += clean[i];
+    }
+  }
+  return masked.replace(/(.{4})/g, '$1 ').trim();
 };
