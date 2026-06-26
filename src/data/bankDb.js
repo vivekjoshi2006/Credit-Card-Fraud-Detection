@@ -7,5 +7,5 @@ export const INDIAN_BANKS = [
 export const getBankDetails = (num) => {
   const cleanNum = num.replace(/\D/g, '');
   return INDIAN_BANKS.find(b => cleanNum.startsWith(b.bin)) || 
-         { bank: 'Indian Bank', color: '#333', type: 'visa' };
+         { bank: 'Bank Name', color: '#333', type: 'Card Type' };
 };
