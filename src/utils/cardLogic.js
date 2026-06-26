@@ -1,0 +1,23 @@
+export const validateLuhn = (num) => {
+  let digits = num.replace(/\D/g, '');
+  let sum = 0;
+  for (let i = 0; i < digits.length; i++) {
+    let intVal = parseInt(digits[i]);
+    if (i % 2 === digits.length % 2) {
+      intVal *= 2;
+      if (intVal > 9) intVal -= 9;
+    }
+    sum += intVal;
+  }
+  return sum % 10 === 0 && digits.length >= 13;
+};
+
+export const formatCardNumber = (value) => {
+  return value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim().slice(0, 19);
+};
+
+export const maskNumber = (num) => {
+  const clean = num.replace(/\s/g, '');
+  if (clean.length < 12) return num;
+  return `XXXX XXXX XXXX ${clean.slice(-4)}`;
+};

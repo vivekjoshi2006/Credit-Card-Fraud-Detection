@@ -1,0 +1,438 @@
+:root {
+  --primary: #0284c7;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Core Layout Wrapper */
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Main Dashboard Panel */
+.glass-panel.main-dashboard {
+  display: flex;
+  gap: 40px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 32px;
+  width: 1000px;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  transition: all 0.3s ease;
+}
+
+/* Column Configuration */
+.dashboard-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add dividing border line to LHS column */
+.dashboard-column.left-side {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.in-tag {
+  background: var(--primary);
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.shield-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.shield-btn.on {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* 3D Visual Card Styling */
+.card-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 220px;
+  margin-bottom: 24px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.chip {
+  width: 38px;
+  height: 28px;
+  background: linear-gradient(135deg, #fce074, #ffd700);
+  border-radius: 6px;
+}
+
+.card-number-display {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  font-family: monospace;
+  margin: 15px 0;
+  white-space: nowrap;   
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.holder label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+.holder div {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.type-logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.card-back {
+  background: #1e293b;
+  transform: rotateY(180deg);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.black-bar {
+  background: #0f172a;
+  height: 45px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.cvv-section {
+  padding: 0 24px 24px 24px;
+  text-align: right;
+}
+
+.cvv-section label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cvv-box {
+  background: white;
+  color: #0f172a;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* User Input Fields Form */
+.input-group select, .input-group input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.input-group select {
+  cursor: pointer;
+}
+
+.input-group select option {
+  background: #1e293b;
+  color: white;
+}
+
+.input-group input:focus, .input-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.flex-row {
+  display: flex;
+  gap: 12px;
+}
+
+.main-btn {
+  background: var(--primary);
+  border: none;
+  color: white;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 4px;
+}
+
+.main-btn:hover {
+  background: #0369a1;
+}
+
+/* Saved Cards Wallet Display */
+.wallet-area {
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+.wallet-area h3 {
+  font-size: 1rem;
+  margin: 0 0 12px 0;
+  color: #94a3b8;
+}
+
+.wallet-item {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  border-left: 3px solid var(--primary);
+}
+
+.no-cards {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Fraud Dashboard Widgets */
+.fraud-dashboard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.dashboard-status-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.status-flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-message {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.score-pill {
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Fraud Dashboard Styles - Spacing Adjustments */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;           
+  margin-bottom: 20px;   
+}
+
+.metric-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 18px 12px;         
+  box-sizing: border-box;
+}
+
+.metric-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;             
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: 14px; 
+}  
+
+.metric-content p {
+  margin: 8px 0;
+  font-size: 0.8rem;        
+  color: #cbd5e1;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.metric-content .highlight {
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.warning-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #f59e0b;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.flag-section h4 {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  margin: 0 0 10px 0;
+}
+
+.flag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flag-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.flag-item:last-child {
+  border-bottom: none;
+}
+
+.no-flags {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #10b981;
+}
+
+/* Responsiveness: Stack columns on mobile devices */
+@media (max-width: 960px) {
+  .glass-panel.main-dashboard {
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    gap: 24px;
+    padding: 24px;
+  }
+  .dashboard-column.left-side {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-right: 0;
+    padding-bottom: 24px;
+    order: 2; /* Move dashboard summary below input fields on small viewports */
+  }
+  .dashboard-column.right-side {
+    order: 1;
+  }
+}
