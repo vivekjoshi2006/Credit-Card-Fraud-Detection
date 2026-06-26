@@ -29,7 +29,7 @@ function App() {
   }, [card, behavior]);
 
   // Derived state to check if a valid bank has been selected
-  const isBankSelected = bank.bank !== 'Credit Card' && bank.bank !== 'Indian Bank';
+  const isBankSelected = bank.bank !== 'Credit Card' && bank.bank !== 'Card Issuer';
 
   const handleNumberChange = (e) => {
     const raw = e.target.value;
@@ -139,7 +139,7 @@ function App() {
 
     const newWallet = [...wallet, { ...card, bank: bank.bank, id: Date.now() }];
     setWallet(newWallet);
-    localStorage.setItem('bharat_wallet', JSON.stringify(newWallet));
+    localStorage.setItem('credit_card_wallet', JSON.stringify(newWallet));
     alert("✅ Approved: Card verified and stored in local wallet.");
   };
 
