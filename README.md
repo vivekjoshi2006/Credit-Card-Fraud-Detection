@@ -2,6 +2,8 @@
 
 An interactive, real-time credit card validation and fraud detection dashboard. Built entirely on the client side (on-device) to ensure PCI-DSS alignment, it utilizes behavioral telemetry, user-input biometrics, and a deep BIN database to calculate transactional risk scores.
 
+---
+
 ## 🌟 Key Features
 
 *   **Heuristic Risk Scoring Engine:** Analyzes multiple parameters (including checksums, behavioral patterns, placeholder checks, and geographic data) to score transactions from 0 to 100.
@@ -27,7 +29,7 @@ An interactive, real-time credit card validation and fraud detection dashboard. 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/credit-card-fraud-detect.git
+   git clone https://github.com/vivekjoshi2006/Credit-Card-Fraud-Detection.git
    cd credit-card-fraud-detect
    ```
 
